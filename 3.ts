@@ -1,33 +1,31 @@
-
-
-import {filter, map} from "ramda"
-
-let a=[
-    {
-        type:"page",
-        id:"1",
-        _display:false,
-        displayBecause:"",
-        get display(){
-            console.log(this)
-            return this._display
-        },
-       set display(v){
-        this
-          map((item:any)=>{
-            this._display=true
-            if(item.parentId==this.id){
-                item.displayBecause='是'+this.id+"的子代"
-                    item.display=true
-            }
-          },a)
-       }
-    }
-        ,
-    {id:"2",display:false,parentId:"1", displayBecause:""},
-    {id:"3",display:false,parentId:"1",displayBecause:""}
+let 节点=[
+    {id:1},
+    {id:2},
+    {id:3}
 ]
 
+let 关系=[
+    {id:1,from:"1",to:'2'},
+    {id:2,from:"1",to:'2'},
+    {id:3,from:"2",to:'3'}
+]
+let 图=[
+    {id:1,节点,关系}
+]
 
-a[0].display=true
-console.log(a)
+let 取图=[
+    {
+        对应map:[
+            {id:1,对应:2}
+        ],
+        id:1,取图id:1,
+        节点:[
+       { id:1,被取图id:"1"}
+    ]
+},
+    {id:2,取图id:1},
+]
+
+let 文本索引集=[
+  {id:"1",text:"李胜男",取图节点id:"1"}
+]
