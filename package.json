@@ -22,7 +22,7 @@
       "web": "https://github.com/megawac"
     }
   ],
-  "name": "ramda",
+  "name": "ramda1",
   "description": "A practical functional library for JavaScript programmers.",
   "keywords": [
     "ramda",
@@ -72,6 +72,7 @@
     "dist"
   ],
   "scripts": {
+    "build1": "bun run 1.ts && bun build ./1.ts --outdir ./build --splittin  --external ramda",
     "prebench": "npm run --silent build:cjs",
     "bench": "node scripts/benchRunner",
     "bookmarklet": "node scripts/bookmarklet",
@@ -88,7 +89,9 @@
     "spec": "cross-env BABEL_ENV=cjs mocha --require @babel/register --reporter spec",
     "test": "npm-run-all --parallel spec lint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ramda": "^0.30.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",
