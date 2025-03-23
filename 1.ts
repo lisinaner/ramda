@@ -47,22 +47,26 @@ import { __ } from "ramda";
   ] satisfies 有父子结构[]
 
 
-let id值等于=propEq('id')
+let 查找id=propEq(__,'id')
+let 查找父节点=propEq(__,'parentId')
 let fn=curry((arr,id:string)=>{
-   
-   let fn2=id值等于(id)
-    // let  这个节点=either()
-    // let  和节点子=这个节点(propEq('parent')(id))
+    //@ts-ignore
+    let  子节点=查找id(id)
+       //@ts-ignore
+    let 父节点=查找父节点(id)
+    //@ts-ignore
+    let  父和子节点=either(子节点)(父节点)
     let filterFn=filter((v:any)=>{
-        // console.log(v)
-        // console.log(propEq('parentId','parent')(v))
-        return  fn2(v)
+        return  父和子节点(v)
       })
       return filterFn(arr)
  })
 
-//  let 给定集合=fn(arr)
- console.log(propEq('hair', 'brown',{name: 'Rusty', age: 10, hair: 'brown'}))
+let 应用对象=fn(arr)
+
+ console.log(应用对象('parentId'))
+
+
 
 
 

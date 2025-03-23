@@ -332,5 +332,5 @@ var propEq_default = propEq;
 
 // 2.ts
 var rusty = { name: "Rusty", age: 10, hair: "brown" };
-var hasBrownHair = propEq_default("hair", "brown");
-hasBrownHair(rusty);
+var hasBrownHair = propEq_default("brown", "hair");
+console.log(hasBrownHair(rusty));
