@@ -73,6 +73,7 @@
   ],
   "scripts": {
     "build1": "bun run 1.ts && bun build ./1.ts --outdir ./build --splittin  --external ramda",
+    "build2": "bun run 2.ts && bun build ./2.ts --outdir ./build --splittin  --external ramda",
     "prebench": "npm run --silent build:cjs",
     "bench": "node scripts/benchRunner",
     "bookmarklet": "node scripts/bookmarklet",
@@ -99,6 +100,7 @@
     "@babel/register": "^7.22.15",
     "@babel/types": "^7.23.0",
     "@rollup/plugin-babel": "^6.0.4",
+    "@types/ramda": "^0.30.2",
     "babel-plugin-annotate-pure-calls": "^0.4.0",
     "babel-plugin-import-export-rename": "^1.0.1",
     "babelify": "^10.0.0",
