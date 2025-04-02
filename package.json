@@ -22,7 +22,7 @@
       "web": "https://github.com/megawac"
     }
   ],
-  "name": "ramda-ts-self",
+  "name": "ramda",
   "description": "A practical functional library for JavaScript programmers.",
   "keywords": [
     "ramda",
@@ -126,6 +126,12 @@
     "sinon": "^7.3.2",
     "testem": "^2.16.0",
     "tsd": "^0.20.0",
-    "xyz": "^3.0.0"
+    "xyz": "^3.0.0",
+    "@types/bun": "latest"
+  },
+  "type": "module",
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
   }
 }
